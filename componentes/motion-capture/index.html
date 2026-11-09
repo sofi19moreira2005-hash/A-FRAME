@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Motion Capture - A-Frame</title>
+  <meta name="description" content="A-Frame motion capture components">
+  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+  <script src="aframe-motion-capture-components.min.js"></script>
+  <style>
+    #info { position: fixed; top: 8px; left: 8px; z-index: 10; max-width: 340px; padding: 8px 12px;
+      background: rgba(0,0,0,.65); color: #fff; font: 13px/1.4 sans-serif; border-radius: 6px; pointer-events: none; }
+    #info b { font-size: 15px; }
+  </style>
+</head>
+<body>
+  <div id="info"><b>Motion Capture</b><br>A-Frame motion capture components<br><small>Grava movimentos. Carrega em "ctrl+alt+r" / ver README. Em desktop só regista a câmara.</small></div>
+  <a-scene >
+
+    <a-entity id="avatar" avatar-recorder></a-entity>
+    <a-box position="0 1 -3" color="#ff7043"></a-box>
+    <a-entity id="cam" camera look-controls wasd-controls position="0 1.6 0"></a-entity>
+    <a-plane rotation="-90 0 0" width="30" height="30" color="#7BC8A4"></a-plane><a-sky color="#9ad1ff"></a-sky>
+  </a-scene>
+</body>
+</html>

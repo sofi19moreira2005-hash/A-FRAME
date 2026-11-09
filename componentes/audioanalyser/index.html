@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Audioanalyser - A-Frame</title>
+  <meta name="description" content="Audio visualizations in A-Frame using Web Audio (AnalyserNode)">
+  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+  <script src="aframe-audioanalyser-component.min.js"></script>
+  <script>AFRAME.registerComponent('pulse',{tick:function(){var an=document.getElementById('an').components.audioanalyser;if(!an||!an.volume)return;var s=1+an.volume/80;this.el.object3D.scale.set(s,s,s);}});</script>
+  <style>
+    #info { position: fixed; top: 8px; left: 8px; z-index: 10; max-width: 340px; padding: 8px 12px;
+      background: rgba(0,0,0,.65); color: #fff; font: 13px/1.4 sans-serif; border-radius: 6px; pointer-events: none; }
+    #info b { font-size: 15px; }
+  </style>
+</head>
+<body>
+  <div id="info"><b>Audioanalyser</b><br>Audio visualizations in A-Frame using Web Audio (AnalyserNode)<br><small>Clica no ecrã para tocar o áudio; a esfera pulsa com o volume.</small></div>
+  <a-scene >
+
+    <a-assets><audio id="song" src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.mp3" crossorigin="anonymous" loop></audio></a-assets>
+    <a-entity audioanalyser="src: #song; enableBeatDetection: true; smoothingTimeConstant: 0.8" id="an"></a-entity>
+    <a-sphere id="orb" pulse position="0 2 -4" radius="1" color="#7c4dff"></a-sphere>
+    <script>
+      // Clica na cena para iniciar o áudio (política de autoplay do browser)
+      var scene=document.querySelector('a-scene');
+      document.addEventListener('click',function(){var a=document.getElementById('song');a.play();},{once:true});
+    </script>
+    <a-plane rotation="-90 0 0" width="30" height="30" color="#7BC8A4"></a-plane><a-sky color="#9ad1ff"></a-sky><a-entity camera look-controls wasd-controls position="0 1.6 3"></a-entity>
+  </a-scene>
+</body>
+</html>

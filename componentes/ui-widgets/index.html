@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>UI Widgets - A-Frame</title>
+  <meta name="description" content="UI Widgets for A-Frame.">
+  <script src="aframe-ui-widgets.min.js"></script>
+  <style>
+    #info { position: fixed; top: 8px; left: 8px; z-index: 10; max-width: 340px; padding: 8px 12px;
+      background: rgba(0,0,0,.65); color: #fff; font: 13px/1.4 sans-serif; border-radius: 6px; pointer-events: none; }
+    #info b { font-size: 15px; }
+  </style>
+</head>
+<body>
+  <div id="info"><b>UI Widgets</b><br>UI Widgets for A-Frame.<br><small>Botão, interruptor, slider e rotary. Usa o cursor (mira) com clique.</small></div>
+  <a-scene >
+
+    <a-entity ui-button position="-1 1.6 -1.5"></a-entity>
+    <a-entity ui-toggle position="0 1.6 -1.5"></a-entity>
+    <a-entity ui-slider position="1 1.6 -1.5"></a-entity>
+    <a-entity ui-rotary position="0 2.4 -1.5"></a-entity>
+    <a-entity camera look-controls position="0 1.6 0"><a-cursor></a-cursor></a-entity>
+    <a-plane rotation="-90 0 0" width="30" height="30" color="#7BC8A4"></a-plane><a-sky color="#9ad1ff"></a-sky>
+  </a-scene>
+</body>
+</html>

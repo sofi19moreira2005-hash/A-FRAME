@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Teleport Controls - A-Frame</title>
+  <meta name="description" content="A-Frame teleport controls component">
+  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+  <script src="aframe-teleport-controls.min.js"></script>
+  <style>
+    #info { position: fixed; top: 8px; left: 8px; z-index: 10; max-width: 340px; padding: 8px 12px;
+      background: rgba(0,0,0,.65); color: #fff; font: 13px/1.4 sans-serif; border-radius: 6px; pointer-events: none; }
+    #info b { font-size: 15px; }
+  </style>
+</head>
+<body>
+  <div id="info"><b>Teleport Controls</b><br>A-Frame teleport controls component<br><small>Teletransporte com controlador VR (trigger).</small></div>
+  <a-scene >
+
+    <a-entity id="rig" position="0 0 0">
+      <a-entity camera look-controls wasd-controls position="0 1.6 0"></a-entity>
+      <a-entity id="right" teleport-controls="button: trigger; collisionEntities: #floor" vive-controls="hand: right" oculus-touch-controls="hand: right"></a-entity>
+    </a-entity>
+    <a-plane id="floor" rotation="-90 0 0" width="30" height="30" color="#7BC8A4"></a-plane>
+    <a-box position="3 1 -5" color="#ff7043"></a-box><a-box position="-3 1 -7" color="#29b6f6"></a-box>
+    <a-sky color="#9ad1ff"></a-sky>
+  </a-scene>
+</body>
+</html>

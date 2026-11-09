@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Layout - A-Frame</title>
+  <meta name="description" content="Position and layout child entities in 3D space for A-Frame">
+  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+  <script src="aframe-layout-component.min.js"></script>
+  <style>
+    #info { position: fixed; top: 8px; left: 8px; z-index: 10; max-width: 340px; padding: 8px 12px;
+      background: rgba(0,0,0,.65); color: #fff; font: 13px/1.4 sans-serif; border-radius: 6px; pointer-events: none; }
+    #info b { font-size: 15px; }
+  </style>
+</head>
+<body>
+  <div id="info"><b>Layout</b><br>Position and layout child entities in 3D space for A-Frame<br><small></small></div>
+  <a-scene >
+
+    <a-entity layout="type: circle; radius: 3" position="0 1.5 -5">
+      <a-box color="#e53935" depth="0.5" width="0.5" height="0.5"></a-box>
+      <a-box color="#fb8c00" depth="0.5" width="0.5" height="0.5"></a-box>
+      <a-box color="#fdd835" depth="0.5" width="0.5" height="0.5"></a-box>
+      <a-box color="#43a047" depth="0.5" width="0.5" height="0.5"></a-box>
+      <a-box color="#1e88e5" depth="0.5" width="0.5" height="0.5"></a-box>
+      <a-box color="#8e24aa" depth="0.5" width="0.5" height="0.5"></a-box>
+    </a-entity>
+    <a-entity layout="type: line; margin: 1.2" position="-2 3.5 -5">
+      <a-sphere radius="0.4" color="#333"></a-sphere><a-sphere radius="0.4" color="#666"></a-sphere><a-sphere radius="0.4" color="#999"></a-sphere>
+    </a-entity>
+    <a-plane rotation="-90 0 0" width="30" height="30" color="#7BC8A4"></a-plane><a-sky color="#9ad1ff"></a-sky><a-entity camera look-controls wasd-controls position="0 1.6 3"></a-entity>
+  </a-scene>
+</body>
+</html>

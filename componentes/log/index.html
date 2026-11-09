@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Log - A-Frame</title>
+  <meta name="description" content="In-VR console logs for A-Frame.">
+  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+  <script src="aframe-log-component.min.js"></script>
+  <style>
+    #info { position: fixed; top: 8px; left: 8px; z-index: 10; max-width: 340px; padding: 8px 12px;
+      background: rgba(0,0,0,.65); color: #fff; font: 13px/1.4 sans-serif; border-radius: 6px; pointer-events: none; }
+    #info b { font-size: 15px; }
+  </style>
+</head>
+<body>
+  <div id="info"><b>Log</b><br>In-VR console logs for A-Frame.<br><small>As mensagens de console.log aparecem dentro da cena.</small></div>
+  <a-scene >
+
+    <a-entity log position="0 1.6 -2"></a-entity>
+    <a-box position="0 1.6 -4" color="#26c6da" id="lb"></a-box>
+    <script>
+      var n=0;setInterval(function(){console.log('Mensagem de log #'+(++n));},1500);
+      document.getElementById('lb').addEventListener('click',function(){console.warn('Caixa clicada!');});
+    </script>
+    <a-plane rotation="-90 0 0" width="30" height="30" color="#7BC8A4"></a-plane><a-sky color="#9ad1ff"></a-sky><a-entity camera look-controls position="0 1.6 0"><a-cursor></a-cursor></a-entity>
+  </a-scene>
+</body>
+</html>

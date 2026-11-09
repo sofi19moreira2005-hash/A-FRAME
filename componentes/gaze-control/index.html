@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Gaze Control - A-Frame</title>
+  <meta name="description" content="Look control that interprets gaze data as input.">
+  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+  <script src="aframe-gaze-control-component.min.js"></script>
+  <style>
+    #info { position: fixed; top: 8px; left: 8px; z-index: 10; max-width: 340px; padding: 8px 12px;
+      background: rgba(0,0,0,.65); color: #fff; font: 13px/1.4 sans-serif; border-radius: 6px; pointer-events: none; }
+    #info b { font-size: 15px; }
+  </style>
+</head>
+<body>
+  <div id="info"><b>Gaze Control</b><br>Look control that interprets gaze data as input.<br><small>Controlo de olhar que interpreta dados de gaze (eye tracker). Sem eye tracker a câmara fica estática.</small></div>
+  <a-scene >
+
+    <a-entity camera look-controls="enabled: false" gaze-control position="0 1.6 0"><a-cursor fuse="true" fuse-timeout="1500"></a-cursor></a-entity>
+    <a-box position="-3 1.6 -4" color="#ff7043"></a-box><a-box position="3 1.6 -4" color="#29b6f6"></a-box><a-box position="0 1.6 4" color="#66bb6a"></a-box>
+    <a-plane rotation="-90 0 0" width="30" height="30" color="#7BC8A4"></a-plane><a-sky color="#9ad1ff"></a-sky>
+  </a-scene>
+</body>
+</html>

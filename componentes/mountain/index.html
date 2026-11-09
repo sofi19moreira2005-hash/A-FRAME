@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mountain - A-Frame</title>
+  <meta name="description" content="Mountain terrain in A-Frame using randomly-generated height maps">
+  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+  <script src="aframe-mountain-component.min.js"></script>
+  <style>
+    #info { position: fixed; top: 8px; left: 8px; z-index: 10; max-width: 340px; padding: 8px 12px;
+      background: rgba(0,0,0,.65); color: #fff; font: 13px/1.4 sans-serif; border-radius: 6px; pointer-events: none; }
+    #info b { font-size: 15px; }
+  </style>
+</head>
+<body>
+  <div id="info"><b>Mountain</b><br>Mountain terrain in A-Frame using randomly-generated height maps<br><small></small></div>
+  <a-scene >
+
+    <a-mountain position="0 0 -15" color="#8d6e63" shadow-color="#5d4037" scale="2 2 2"></a-mountain>
+    <a-sky color="#81d4fa"></a-sky><a-entity camera look-controls wasd-controls position="0 1.6 3"></a-entity>
+  </a-scene>
+</body>
+</html>
